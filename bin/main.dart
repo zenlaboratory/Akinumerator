@@ -17,22 +17,21 @@ var akinumeratorNumber;
 var userNumber;
 var greaterSmaller;
 var tries = 1;
+final maxGuessValue = 100;
 
 // Main class
 
 void main(List<String> arguments) {
-
   do {
     menu();
-  }
-  while (option != 'G' && option != 'T');
+  } while (option != 'G' && option != 'T');
   {
     switch (option) {
       case 'G':
         print('********************* - GUESS OPTION - *********************');
         break;
       case 'T':
-        akinumeratorNumber = randomNumber.nextInt(101);
+        akinumeratorNumber = randomNumber.nextInt(maxGuessValue + 1);
         print('********************* - THINK OPTION - *********************');
         print("Think in a number between 0 and 100 and don't tell to anybody"
             '...');
@@ -46,12 +45,37 @@ void main(List<String> arguments) {
             switch (greaterSmaller) {
               case 'G':
                 print('User number is greater');
+
+                // We don’t have any other function to find random numbers
+                // between two numbers. random method returns one random value
+                // between 0 and the argument value we pass to this method.
+                // So, to find random numbers between two numbers say min and
+                // max, we can pass max – min as the parameter to this method
+                // and add min to that result.
+                //
+                //This will always give one random value between min and max.
+
+                akinumeratorNumber = ((akinumeratorNumber + 1) + randomNumber
+                    .nextInt
+                  ((maxGuessValue + 1) - (akinumeratorNumber + 1)));
+                tries = tries + 1;
                 break;
               case 'S':
                 print('User number is smaller');
-                akinumeratorNumber = (int.parse(userNumber) + randomNumber.nextInt
-                (akinumeratorNumber - int.parse(userNumber)));
-                print(akinumeratorNumber);
+
+                //We don’t have any other function to find random numbers
+                // between two numbers. random method returns one random value
+                // between 0 and the argument value we pass to this method.
+                // So, to find random numbers between two numbers say min and
+                // max, we can pass max – min as the parameter to this method
+                // and add min to that result.
+                //
+                //This will always give one random value between min and max.
+
+                akinumeratorNumber =
+                (int.parse(userNumber) + randomNumber.nextInt
+                  (akinumeratorNumber - int.parse(userNumber)));
+                tries = tries + 1;
                 break;
             }
             break;
@@ -59,6 +83,7 @@ void main(List<String> arguments) {
           while (greaterSmaller != 'G' && greaterSmaller != 'S');
         }
         print('');
+        print('My guessed number is the ${akinumeratorNumber}');
         print('Yeeeeahhhh..! I guessed your number in ${tries} try/tries!');
     }
   }
@@ -90,6 +115,7 @@ void greaterSmallerMenu() {
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
 }
+
 
 //akinumeratorNumber = randomNumber.nextInt(101);
 //print(akinumeratorNumber);
