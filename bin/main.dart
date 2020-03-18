@@ -2,7 +2,7 @@
 Akinumerator is thinking about.
  */
 
-// Necessary imports to make the game, dart:io to input/output section and 
+// Necessary imports to make the game, dart:io to input/output section and
 // dart:math to generate random numbers.
 
 import 'dart:io';
@@ -10,13 +10,13 @@ import 'dart:math';
 
 // Variables used in the game.
 
-var option;
+var gameOption;
 // var pressAKey = null;
 var randomNumber = Random();
 var akinumeratorNumber;
 var userNumber;
 var greaterSmaller;
-var tries = 1;
+var numberOfTries = 1;
 final maxGuessValue = 100;
 
 // Main class
@@ -24,15 +24,17 @@ final maxGuessValue = 100;
 void main(List<String> arguments) {
   do {
     menu();
-  } while (option != 'G' && option != 'T');
+  } while (gameOption != 'G' && gameOption != 'T');
   {
-    switch (option) {
+    switch (gameOption) {
       case 'G':
-        print('********************* - GUESS OPTION - *********************');
+        print(
+            '********************* - GUESS gameOption - *********************');
         break;
       case 'T':
         akinumeratorNumber = randomNumber.nextInt(maxGuessValue + 1);
-        print('********************* - THINK OPTION - *********************');
+        print(
+            '********************* - THINK gameOption - *********************');
         print("Think in a number between 0 and 100 and don't tell to anybody"
             '...');
         stdout.write("Then type your number and I'll try to guess it"
@@ -58,7 +60,7 @@ void main(List<String> arguments) {
                 akinumeratorNumber = ((akinumeratorNumber + 1) + randomNumber
                     .nextInt
                   ((maxGuessValue + 1) - (akinumeratorNumber + 1)));
-                tries = tries + 1;
+                numberOfTries = numberOfTries + 1;
                 break;
               case 'S':
                 print('User number is smaller');
@@ -75,7 +77,7 @@ void main(List<String> arguments) {
                 akinumeratorNumber =
                 (int.parse(userNumber) + randomNumber.nextInt
                   (akinumeratorNumber - int.parse(userNumber)));
-                tries = tries + 1;
+                numberOfTries = numberOfTries + 1;
                 break;
             }
             break;
@@ -84,7 +86,8 @@ void main(List<String> arguments) {
         }
         print('');
         print('My guessed number is the ${akinumeratorNumber}');
-        print('Yeeeeahhhh..! I guessed your number in ${tries} try/tries!');
+        print(
+            'Yeeeeahhhh..! I guessed your number in ${numberOfTries} try/numberOfTries!');
     }
   }
 
@@ -93,22 +96,21 @@ void main(List<String> arguments) {
 // Function menu for calling the game menu
 
 void menu() {
-
   print('************************************************************');
   print('*************** - Welcome to Akinumerator! - ***************');
   print('*** Do you want to (G)uess a number or (T)hink a number? ***');
-  stdout.writeln('****************** Select an option G/T: '
+  stdout.writeln('****************** Select an gameOption G/T: '
       '*******************');
   print('************************************************************ \n');
   print('');
 
-  // Reading the user's option.
+  // Reading the user's gameOption.
 
-  option = stdin.readLineSync();
+  gameOption = stdin.readLineSync();
 
 }
 
-// Greater or smaller option menu.
+// Greater or smaller gameOption menu.
 
 void greaterSmallerMenu() {
   
