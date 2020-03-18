@@ -29,13 +29,13 @@ void main(List<String> arguments) {
   {
     switch (gameOption) {
       case 'G':
-        print(
-            '********************* - GUESS gameOption - *********************');
+        // TODO Guess game option.
+        print('********************* - GUESS Option - *********************');
         break;
       case 'T':
         akinumeratorNumber = randomNumber.nextInt(maxGuessValue + 1);
         print(
-            '********************* - THINK gameOption - *********************');
+            '********************* - THINK Option - *********************');
         print("Think in a number between 0 and 100 and don't tell to anybody"
             '...');
         stdout.write("Then type your number and I'll try to guess it"
@@ -82,13 +82,12 @@ void main(List<String> arguments) {
                 break;
             }
             break;
-          }
-          while (greaterSmaller != 'G' && greaterSmaller != 'S');
+          } while (greaterSmaller != 'G' && greaterSmaller != 'S');
         }
         print('');
         print('My guessed number is the ${akinumeratorNumber}');
-        print(
-            'Yeeeeahhhh..! I guessed your number in ${numberOfTries} try/numberOfTries!');
+        print('Yeeeeahhhh..! I guessed your number in ${numberOfTries} '
+            'try/tries!');
     }
   }
 
