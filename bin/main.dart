@@ -82,13 +82,12 @@ void main(List<String> arguments) {
                 break;
             }
             break;
-          }
-          while (greaterSmaller != 'G' && greaterSmaller != 'S');
+          } while (greaterSmaller != 'G' && greaterSmaller != 'S');
         }
         print('');
         print('My guessed number is the ${akinumeratorNumber}');
-        print(
-            'Yeeeeahhhh..! I guessed your number in ${numberOfTries} try/numberOfTries!');
+        print('Yeeeeahhhh..! I guessed your number in ${numberOfTries} '
+            'try/tries!');
     }
   }
 
