@@ -22,6 +22,7 @@ final maxGuessValue = 100;
 // Main class
 
 void main(List<String> arguments) {
+  
   do {
     menu();
   } while (option != 'G' && option != 'T');
