@@ -114,4 +114,5 @@ void greaterSmallerMenu() {
 
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
+  
 }
