@@ -111,8 +111,10 @@ void menu() {
 // Greater or smaller option menu.
 
 void greaterSmallerMenu() {
+  
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
+  
 }
 
 /* How to get a random number between min and max values.
