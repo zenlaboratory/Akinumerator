@@ -111,7 +111,20 @@ void menu() {
 // Greater or smaller option menu.
 
 void greaterSmallerMenu() {
-
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
 }
+
+/* How to get a random number between min and max values.
+
+import 'dart:math';
+main(List<string> args) {
+  final random = new Random();
+  final min = 100;
+  final max = 500;
+  for (int i = 0; i < 10; i++) {
+    print(min + random.nextInt(max - min));
+  }
+}
+
+ */
