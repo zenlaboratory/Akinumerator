@@ -115,29 +115,3 @@ void greaterSmallerMenu() {
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
 }
-
-
-//akinumeratorNumber = randomNumber.nextInt(101);
-//print(akinumeratorNumber);
-/*print(userNumber);
-        print(akinumeratorNumber);
-        while (userNumber != akinumeratorNumber) {
-          print('My guessed number is the ${akinumeratorNumber}');
-          do {
-            stdout.write("It's yours (G)reeter or (S)maller than mine?");
-            greaterSmaller = stdin.readLineSync();
-          }
-          while (greaterSmaller != 'G' && greaterSmaller != 'S');
-          break;
-
-        }
-
-
-        break;*/
-
-
-/*if (userNumber == akinumeratorNumber.toString()) {
-print('Yeeeeahhhh I guessed the number in ${tries + 1} tries!');
-else {
-
-}*/
