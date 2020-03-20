@@ -11,18 +11,17 @@ import 'dart:math';
 // Variables used in the game.
 
 var gameOption;
-// var pressAKey = null;
 var randomNumber = Random();
 var akinumeratorNumber;
 var userNumber;
 var greaterSmaller;
 var numberOfTries = 1;
-final maxGuessValue = 100;
+var maxGuessValue = 100;
+var minGuessValue = 0;
 
 // Main class
 
 void main(List<String> arguments) {
-  
   do {
     menu();
   } while (gameOption != 'G' && gameOption != 'T');
@@ -34,8 +33,7 @@ void main(List<String> arguments) {
         break;
       case 'T':
         akinumeratorNumber = randomNumber.nextInt(maxGuessValue + 1);
-        print(
-            '********************* - THINK Option - *********************');
+        print('********************* - THINK Option - *********************');
         print("Think in a number between 0 and 100 and don't tell to anybody"
             '...');
         stdout.write("Then type your number and I'll try to guess it"
@@ -48,6 +46,7 @@ void main(List<String> arguments) {
             switch (greaterSmaller) {
               case 'G':
                 print('User number is greater');
+                minGuessValue = akinumeratorNumber + 1;
 
                 // We don’t have any other function to find random numbers
                 // between two numbers. random method returns one random value
@@ -58,13 +57,14 @@ void main(List<String> arguments) {
                 //
                 //This will always give one random value between min and max.
 
-                akinumeratorNumber = ((akinumeratorNumber + 1) + randomNumber
-                    .nextInt
-                  ((maxGuessValue + 1) - (akinumeratorNumber + 1)));
+                akinumeratorNumber = minGuessValue +
+                    randomNumber.nextInt((maxGuessValue + 1) - minGuessValue);
                 numberOfTries = numberOfTries + 1;
+
                 break;
               case 'S':
                 print('User number is smaller');
+                maxGuessValue = akinumeratorNumber;
 
                 //We don’t have any other function to find random numbers
                 // between two numbers. random method returns one random value
@@ -75,9 +75,8 @@ void main(List<String> arguments) {
                 //
                 //This will always give one random value between min and max.
 
-                akinumeratorNumber =
-                (int.parse(userNumber) + randomNumber.nextInt
-                  (akinumeratorNumber - int.parse(userNumber)));
+                akinumeratorNumber = minGuessValue +
+                    randomNumber.nextInt(maxGuessValue - minGuessValue);
                 numberOfTries = numberOfTries + 1;
                 break;
             }
@@ -90,7 +89,6 @@ void main(List<String> arguments) {
             'try/tries!');
     }
   }
-
 }
 
 // Function menu for calling the game menu
@@ -99,7 +97,7 @@ void menu() {
   print('************************************************************');
   print('*************** - Welcome to Akinumerator! - ***************');
   print('*** Do you want to (G)uess a number or (T)hink a number? ***');
-  stdout.writeln('****************** Select an gameOption G/T: '
+  stdout.writeln('****************** Select an Option G/T: '
       '*******************');
   print('************************************************************ \n');
   print('');
@@ -107,16 +105,13 @@ void menu() {
   // Reading the user's gameOption.
 
   gameOption = stdin.readLineSync();
-
 }
 
 // Greater or smaller gameOption menu.
 
 void greaterSmallerMenu() {
-  
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
   greaterSmaller = stdin.readLineSync();
-  
 }
 
 /* How to get a random number between min and max values.
