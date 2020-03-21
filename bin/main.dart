@@ -23,7 +23,7 @@ var minGuessValue = 0;
 
 void main(List<String> arguments) {
   do {
-    menu();
+    mainMenu();
   } while (gameOption != 'G' && gameOption != 'T');
   {
     switch (gameOption) {
@@ -95,7 +95,7 @@ void main(List<String> arguments) {
 
 // Function menu for calling the game menu.
 
-void menu() {
+void mainMenu() {
   print('************************************************************');
   print('*************** - Welcome to Akinumerator! - ***************');
   print('*** Do you want to (G)uess a number or (T)hink a number? ***');
