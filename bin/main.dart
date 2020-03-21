@@ -19,7 +19,7 @@ var numberOfTries = 1;
 var maxGuessValue = 100;
 var minGuessValue = 0;
 
-// Main class
+// Main class.
 
 void main(List<String> arguments) {
   do {
@@ -57,7 +57,7 @@ void main(List<String> arguments) {
                 // max, we can pass max – min as the parameter to this method
                 // and add min to that result.
                 //
-                //This will always give one random value between min and max.
+                // This will always give one random value between min and max.
 
                 akinumeratorNumber = minGuessValue +
                     randomNumber.nextInt((maxGuessValue + 1) - minGuessValue);
@@ -68,14 +68,14 @@ void main(List<String> arguments) {
                 print('User number is smaller');
                 maxGuessValue = akinumeratorNumber;
 
-                //We don’t have any other function to find random numbers
+                // We don’t have any other function to find random numbers
                 // between two numbers. random method returns one random value
                 // between 0 and the argument value we pass to this method.
                 // So, to find random numbers between two numbers say min and
                 // max, we can pass max – min as the parameter to this method
                 // and add min to that result.
                 //
-                //This will always give one random value between min and max.
+                // This will always give one random value between min and max.
 
                 akinumeratorNumber = minGuessValue +
                     randomNumber.nextInt(maxGuessValue - minGuessValue);
@@ -93,7 +93,7 @@ void main(List<String> arguments) {
   }
 }
 
-// Function menu for calling the game menu
+// Function menu for calling the game menu.
 
 void menu() {
   print('************************************************************');
@@ -118,8 +118,8 @@ void greaterSmallerMenu() {
 
 /* How to get a random number between min and max values.
 
-import 'dart:math';
-main(List<string> args) {
+  import 'dart:math';
+  main(List<string> args) {
   final random = new Random();
   final min = 100;
   final max = 500;
@@ -128,4 +128,4 @@ main(List<string> args) {
   }
 }
 
- */
+*/
