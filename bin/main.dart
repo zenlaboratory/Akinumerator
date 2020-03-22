@@ -2,8 +2,8 @@
 Akinumerator is thinking about.
  */
 
-// Necessary imports to make the game, dart:io to input/output section and
-// dart:math to generate random numbers.
+// Necessary imports to make the game, dart:io to input/output section 
+// and dart:math to generate random numbers.
 
 import 'dart:io';
 import 'dart:math';
