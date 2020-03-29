@@ -104,12 +104,12 @@ void mainMenu() {
   print('************************************************************ \n');
   print('');
 
-  // Reading the user's gameOption.
+  // Reading the user's game option.
 
   gameOption = stdin.readLineSync();
 }
 
-// Greater or smaller gameOption menu.
+// Greater or smaller game option menu.
 
 void greaterSmallerMenu() {
   stdout.write('Is it your number (G)reeter or (S)maller than mine? ');
