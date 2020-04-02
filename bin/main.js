@@ -88,7 +88,7 @@ define(['dart_sdk'], function(dart_sdk) {
     core.print("************************************************************");
     core.print("*************** - Welcome to Akinumerator! - ***************");
     core.print("*** Do you want to (G)uess a number or (T)hink a number? ***");
-    io.stdout.writeln("****************** Select an gameOption G/T: " + "*******************");
+    io.stdout.writeln("****************** Select an Option G/T: " + "*******************");
     core.print("************************************************************ \n");
     core.print("");
     main.gameOption = io.stdin.readLineSync();
