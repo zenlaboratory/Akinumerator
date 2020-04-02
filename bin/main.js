@@ -1,3 +1,4 @@
+
 define(['dart_sdk'], function(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
