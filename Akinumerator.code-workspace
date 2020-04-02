@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"todo-tree.tree.scanMode": "workspace"
+		"todo-tree.tree.scanMode": "workspace",
+		"todo-tree.tree.showScanModeButton": true,
+		"todo-tree.tree.showCountsInTree": true
 	}
 }
