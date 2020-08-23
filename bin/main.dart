@@ -70,7 +70,7 @@ void main(List<String> arguments) {
                 break;
               case 'S':
                 print('User number is smaller');
-                maxGuessValue = akinumeratorNumber;
+                maxGuessValue = akinumeratorNumber - 1;
 
                 // We don’t have any other function to find random numbers
                 // between two numbers. random method returns one random value
